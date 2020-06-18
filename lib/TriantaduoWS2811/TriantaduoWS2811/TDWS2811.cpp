@@ -133,7 +133,7 @@ void TDWS2811::configureFlexIO(void) {
   p->SHIFTBUFBIS[1] = 0xAAAAAAAA;  //Identifiable pattern should DMA fail to write SHIFTBUFBIS[1]
   p->SHIFTBUF[2] = 0x00000000;
   p->SHIFTBUF[3] = 0x00000000;
-  p->SHIFTBUF[3] = 0x00000000;
+  p->SHIFTBUF[4] = 0x00000000;
 
 }
 

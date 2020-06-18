@@ -1,9 +1,9 @@
 #include <Arduino.h>
+#include <TriantaduoWS2811/TDWS2811.h>
 #include <NativeEthernet.h>
 #include <NativeEthernetUdp.h>
 #include <ArtNode.h>
 #include <ArtNetFrameExtension.h>
-#include <TriantaduoWS2811/TDWS2811.h>
 
 ///////////////////////////////////////////////////////////////////////////////
 // debug mode: 0 no debug, 1 debug
@@ -106,7 +106,7 @@ void setup() {
   IPAddress subnet(255, 0, 0, 0);
   // start ethernet, udp and artnet
   Ethernet.setStackHeap(1024 * 128);
-  Ethernet.setSocketSize(4 * 1460);
+  Ethernet.setSocketSize(1024 * 128);
   Ethernet.setSocketNum(1);
   Serial.println("ETH BEGIN");
   Ethernet.begin(config.mac, config.ip, gateway, gateway, subnet);
@@ -158,12 +158,12 @@ void loop() {
                   (int) data[i * NUM_CHANNEL_PER_LED + 3]
                 };
                 if (DEBUG) debugLed(data, i);
-                td.setLed(output, offset + i, current);
+                td.setLed(output, offset + i, current, INACTIVE);
               }
             }
 
             if (!SYNC) {
-              // TODO: show leds!
+              td.flipBuffers();
             }
             break;
           }
@@ -172,7 +172,7 @@ void loop() {
           case OpSync: {
             if (DEBUG) Serial.println("SYNC");
             if (SYNC) {
-              // TODO: show leds!
+              td.flipBuffers();
             }
             break;
           }
