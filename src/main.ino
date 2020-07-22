@@ -9,13 +9,13 @@
 // debug mode: 0 no debug, 1 debug
 // when in debug mode, some informations a sent via serial
 // debug slows down the artnet decoding!!
-#define DEBUG 1
+#define DEBUG 0
 
 ///////////////////////////////////////////////////////////////////////////////
 // conf: the only things that need to be touched
-#define NAME "PASSENGERS 1"
-#define LONG_NAME "PASSENGERS 1"
-#define CUSTOM_ID 1
+#define NAME "PASSENGERS 18"
+#define LONG_NAME "PASSENGERS 18"
+#define CUSTOM_ID 18
 // pass sync to 0 if your software don't send art-sync packets (e.g millumin, max/msp, and so on)
 #define SYNC 1
 
@@ -25,8 +25,8 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 // output config
-#define NUM_OF_OUTPUTS 32
-#define MAX_NUM_LED_PER_OUTPUT 300
+#define NUM_OF_OUTPUTS 12
+#define MAX_NUM_LED_PER_OUTPUT 60
 #define NUM_CHANNEL_PER_LED 4
 
 // buffer size of the OctoWS2811 lib
