@@ -13,9 +13,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 // conf: the only things that need to be touched
-#define NAME "PASSENGERS 18"
-#define LONG_NAME "PASSENGERS 18"
-#define CUSTOM_ID 18
+#define NAME "PASSENGERS 20"
+#define LONG_NAME "PASSENGERS 20"
+#define CUSTOM_ID 20
 // pass sync to 0 if your software don't send art-sync packets (e.g millumin, max/msp, and so on)
 #define SYNC 1
 
